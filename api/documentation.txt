@@ -1,0 +1,82 @@
+Endpoints:
+
+1. Retrieve All Users
+   - URL: /all/
+   - Method: GET
+   - Description: Retrieves and returns a list of all users.
+
+2. User Login
+   - URL: /login/
+   - Method: POST
+   - Input: Username and password
+   - Description: Authenticates a user based on the provided username and password and returns user information if authentication is successful.
+
+3. Update User Profile
+   - URL: /update_user/<int:id>
+   - Method: POST
+   - Input: Various user attributes
+   - Description: Updates a user's attributes. Ensures the user exists and updates the specified attributes.
+
+4. User Tracks
+   - URL: /user_tracks/<str:id>
+   - Method: GET
+   - Description: Retrieves and returns music items for a specific user identified by their ID.
+
+5. Get User Licenses
+   - URL: /get_user_licenses/<int:userID>
+   - Method: GET
+   - Description: Retrieves and returns licenses for a specific user identified by their ID.
+
+6. User Notifications
+   - URL: /user_notifications/<int:id>
+   - Method: GET
+   - Description: Retrieves and returns notifications for a specific user identified by their ID.
+
+7. Retrieve All Music
+   - URL: /music/
+   - Method: GET
+   - Description: Retrieves and returns a list of all music items.
+
+8. Get Music
+   - URL: /get_music/<int:id>
+   - Method: GET
+   - Description: Retrieves and returns a specific song by its ID.
+
+9. Create Music
+   - URL: /create_music/
+   - Method: POST
+   - Input: Music attributes
+   - Description: Creates a new music item. Validates input and creates the music object.
+
+10. Add Comment
+    - URL: /add_comment/<int:songID>
+    - Method: POST
+    - Input: userID, context
+    - Description: Adds a comment to a specific song. Ensures the song and user exist and that the comment is not empty.
+
+11. Add Like
+    - URL: /add_like/<int:songID>
+    - Method: POST
+    - Input: userID
+    - Description: Adds a "like" to a specific song for a user. Ensures the song and user exist and that the user has not already liked the song.
+
+12. Follow/Unfollow User
+    - URL: /follower/<str:mode>
+    - Method: POST
+    - Input: mode (follow/unfollow), from (user ID), to (user ID)
+    - Description: Allows a user to follow or unfollow another user. Checks if users exist and handles follow/unfollow requests accordingly.
+
+13. Get Followers
+    - URL: /get_followers/<int:id>
+    - Method: GET
+    - Description: Retrieves and returns followers for a specific user identified by their ID.
+
+14. Token Obtain (Authentication)
+    - URL: /token/
+    - Method: POST
+    - Description: Obtains a token for authentication, providing user information.
+
+15. Token Refresh
+    - URL: /token/refresh/
+    - Method: POST
+    - Description: Refreshes an authentication token.
